@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Hover Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            width: 400px;
+            aspect-ratio: 1 / 0.7;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Added padding to balance spacing */
+        }
+
+        .card .image-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .card .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease-in-out;
+        }
+
+        .card:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 2px solid white;
+            border-radius: inherit;
+            opacity: 0;
+            transition: 0.4s ease-in-out;
+            pointer-events: none;
+        }
+
+        .card:hover img {
+            filter: grayscale(1) brightness(0.9);
+        }
+
+        .card:hover:after {
+            opacity: 1;
+            inset: 5px; /* Adjusted to keep the border within card dimensions */
+        }
+
+        .card .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+        }
+
+        .card .content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: 0.4s ease-in-out;
+        }
+
+        .card .content p {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.4s ease-in-out;
+        }
+
+        .card:hover .content h2 {
+            scale: 1;
+            opacity: 1;
+        }
+
+        .card:hover .content p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="image-box">
+            <img src="https://t4.ftcdn.net/jpg/02/08/86/53/240_F_208865322_YGB6A2f93znuZY6Qc6hPgaRPjUFLQgFp.jpg" alt="Ford Mustang 1969">
+        </div>
+        <div class="content">
+            <h2>Ford Mustang 1969</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti porro quis.</p>
+        </div>
+    </div>
+</body>
+</html>
