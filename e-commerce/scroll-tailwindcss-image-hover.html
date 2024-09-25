@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Example with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageDisplay = document.getElementById("image-display");
+        const imageSections = document.querySelectorAll(".image-section");
+        const segments = document.querySelectorAll(".border-segment");
+
+        // Images associated with each section
+        const images = {
+          section1:
+            "https://themes12.anvanto.com/super/themes/birdwings/90-home_default/brown-bear-printed-sweater.jpg",
+          section2:
+            "https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg",
+          section3:
+            "https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg",
+          section4:
+            "https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg",
+        };
+
+        // Initially show image for Section 1 (no active border color)
+        imageDisplay.src = images.section1;
+
+        // Add hover event listeners to each section
+        imageSections.forEach((section, index) => {
+          section.addEventListener("mouseover", () => {
+            const id = section.id;
+
+            // Smoothly fade the image to the next one
+            // imageDisplay.classList.add("opacity-50");
+            imageDisplay.src = images[id];
+            // setTimeout(() => {
+            //   imageDisplay.classList.remove("opacity-50");
+            // }, 300);
+
+            // Remove red border from all segments and highlight the corresponding one
+            segments.forEach((seg) => seg.classList.remove("border-red-200"));
+            segments[index].classList.add("border-red-200");
+          });
+
+          section.addEventListener("mouseleave", () => {
+            // Reset to section 1 image without showing any border
+            // imageDisplay.classList.add("opacity-50");
+            imageDisplay.src = images.section1;
+            // setTimeout(() => {
+            //   imageDisplay.classList.remove("opacity-50");
+            // }, 300);
+
+            // Remove active border color when not hovering
+            segments.forEach((seg) => seg.classList.remove("border-red-200"));
+          });
+        });
+      });
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex justify-center items-center">
+    <div class="border shadow-md w-[500px]">
+      <!-- Image container that changes based on hover -->
+      <div
+        id="image-container"
+        class="relative w-[300px] h-[203.75px] mx-auto mt-4"
+      >
+        <!-- Image that changes based on hover -->
+        <img
+          id="image-display"
+          class="w-full h-full transition-opacity duration-300"
+          src=""
+          alt="Image display"
+        />
+
+        <!-- Invisible hover areas over the image (divided into 4 sections) -->
+        <div
+          id="section1"
+          class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+        ></div>
+        <div
+          id="section2"
+          class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+        ></div>
+        <div
+          id="section3"
+          class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+        ></div>
+        <div
+          id="section4"
+          class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+        ></div>
+      </div>
+      <!-- Border container for the lines -->
+      <div
+        class="border-container flex justify-between items-center w-[280px] border-gray-300 mx-auto mt-1 border-b"
+      >
+        <div
+          id="line1"
+          class="border-segment w-[48px] h-full border-t-2 border-transparent cursor-pointer"
+        ></div>
+        <div
+          id="line2"
+          class="border-segment w-[48px] h-full border-t-2 border-transparent cursor-pointer"
+        ></div>
+        <div
+          id="line3"
+          class="border-segment w-[48px] h-full border-t-2 border-transparent cursor-pointer"
+        ></div>
+        <div
+          id="line4"
+          class="border-segment w-[48px] h-full border-t-2 border-transparent cursor-pointer"
+        ></div>
+      </div>
+      <div class="text-center">
+        <p>product name</p>
+        <p>price</p>
+      </div>
+    </div>
+  </body>
+</html>

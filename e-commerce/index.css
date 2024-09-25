@@ -1,0 +1,40 @@
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #816262;
+}
+
+
+ .tables-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+    transform: translateX(-40%);
+    /* transform: translateX(-50%) translateY(10px);  */
+    /* margin: 10px; */
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+ .tables-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+ .tables:hover .tables-content {
+    display: block;
+}
+
+ .tables-content a:hover {
+    background-color: #ddd;
+}
+
+

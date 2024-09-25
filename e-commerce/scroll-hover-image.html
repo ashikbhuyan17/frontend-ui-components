@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Example</title>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const segments = document.querySelectorAll(".border-segment");
+        const imageDisplay = document.getElementById("image-display");
+
+        // Images associated with each border line
+        const images = {
+          line1:
+            "https://themes12.anvanto.com/super/themes/birdwings/90-home_default/brown-bear-printed-sweater.jpg",
+          line2:
+            "https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg",
+          line3:
+            "https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg",
+          line4:
+            "https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg",
+        };
+
+        // Initially show image for Line 1 (without active border)
+        imageDisplay.src = images.line1;
+
+        // Add hover event listeners to each segment
+        segments.forEach((segment) => {
+          segment.addEventListener("mouseover", () => {
+            // Remove red border from all segments
+            segments.forEach((seg) => seg.classList.remove("border-red-500"));
+
+            const id = segment.id;
+            // Add red border to the hovered segment and display corresponding image
+            segment.classList.add("border-red-500");
+            imageDisplay.src = images[id];
+          });
+
+          segment.addEventListener("mouseleave", () => {
+            // Reset to Line 1 image (without showing a red border)
+            segments.forEach((seg) => seg.classList.remove("border-red-500"));
+            imageDisplay.src = images.line1; // Show Line 1 image when no hover
+          });
+        });
+      });
+    </script>
+    <style>
+      .border-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        border-bottom: 1px solid #d1d5db;
+        margin: 0 auto;
+      }
+
+      .border-segment {
+        width: 48px;
+        height: 100%;
+        border-top: 4px solid transparent;
+        cursor: pointer;
+      }
+
+      .border-segment:hover {
+        border-top-color: #f87171; /* Tailwind hover:border-red-500 */
+      }
+
+      #data-container {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      #image-display {
+        height: 203.75px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="data-container">
+      <!-- Image that changes based on the hovered line -->
+      <img
+        id="image-display"
+        src=""
+        alt="Image display"
+        style="height: 203.75px"
+      />
+    </div>
+    <div class="border-container">
+      <div id="line1" class="border-segment"></div>
+      <div id="line2" class="border-segment"></div>
+      <div id="line3" class="border-segment"></div>
+      <div id="line4" class="border-segment"></div>
+    </div>
+  </body>
+</html>

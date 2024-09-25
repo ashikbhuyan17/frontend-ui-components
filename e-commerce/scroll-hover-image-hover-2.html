@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Example with No Default Active Border</title>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageDisplay = document.getElementById("image-display");
+        const imageSections = document.querySelectorAll(".image-section");
+        const segments = document.querySelectorAll(".border-segment");
+
+        // Images associated with each section
+        const images = {
+          section1:
+            "https://themes12.anvanto.com/super/themes/birdwings/90-home_default/brown-bear-printed-sweater.jpg",
+          section2:
+            "https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg",
+          section3:
+            "https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg",
+          section4:
+            "https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg",
+        };
+
+        // Initially show image for Section 1 (no active border color)
+        imageDisplay.src = images.section1;
+
+        // Add hover event listeners to each section
+        imageSections.forEach((section, index) => {
+          section.addEventListener("mouseover", () => {
+            const id = section.id;
+
+            // Smoothly fade the image to the next one
+            imageDisplay.classList.add("fade-in");
+            imageDisplay.src = images[id];
+            setTimeout(() => {
+              imageDisplay.classList.remove("fade-in");
+            }, 300);
+
+            // Remove red border from all segments and highlight the corresponding one
+            segments.forEach((seg) => seg.classList.remove("border-red-500"));
+            segments[index].classList.add("border-red-500");
+          });
+
+          section.addEventListener("mouseleave", () => {
+            // Reset to section 1 image without showing any border
+            imageDisplay.classList.add("fade-in");
+            imageDisplay.src = images.section1;
+            setTimeout(() => {
+              imageDisplay.classList.remove("fade-in");
+            }, 300);
+
+            // Remove active border color when not hovering
+            segments.forEach((seg) => seg.classList.remove("border-red-500"));
+          });
+        });
+      });
+    </script>
+    <style>
+      /* Border container */
+      .border-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        border: 1px solid #d1d5db; /* Tailwind border-gray-300 */
+        margin: 1rem auto;
+      }
+
+      .border-segment {
+        width: 48px;
+        height: 100%;
+        border-top: 4px solid transparent;
+        cursor: pointer;
+      }
+
+      .border-segment:hover,
+      .border-segment.border-red-500 {
+        border-top-color: #f87171; /* Tailwind hover:border-red-500 */
+      }
+
+      /* Image container */
+      #image-container {
+        position: relative;
+        width: 400px;
+        height: 203.75px;
+        margin: 0 auto;
+      }
+
+      #image-display {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out; /* Smooth transition */
+      }
+
+      /* Sections to hover over */
+      .image-section {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 25%;
+        cursor: pointer;
+      }
+
+      #section1 {
+        left: 0;
+      }
+      #section2 {
+        left: 25%;
+      }
+      #section3 {
+        left: 50%;
+      }
+      #section4 {
+        left: 75%;
+      }
+
+      /* Smooth fade-in effect */
+      .fade-in {
+        opacity: 0.5; /* Transition without fully disappearing */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Border container for the lines (stays persistent) -->
+    <div class="border-container">
+      <div id="line1" class="border-segment"></div>
+      <div id="line2" class="border-segment"></div>
+      <div id="line3" class="border-segment"></div>
+      <div id="line4" class="border-segment"></div>
+    </div>
+
+    <!-- Image container that changes based on hover -->
+    <div id="image-container">
+      <!-- Image that changes based on hover -->
+      <img id="image-display" src="" alt="Image display" />
+
+      <!-- Invisible hover areas over the image (divided into 4 sections) -->
+      <div id="section1" class="image-section"></div>
+      <div id="section2" class="image-section"></div>
+      <div id="section3" class="image-section"></div>
+      <div id="section4" class="image-section"></div>
+    </div>
+  </body>
+</html>

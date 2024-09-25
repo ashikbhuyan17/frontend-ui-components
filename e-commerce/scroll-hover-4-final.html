@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Example with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageDisplay = document.getElementById("image-display");
+        const imageSections = document.querySelectorAll(".image-section");
+        const segments = document.querySelectorAll(".border-segment");
+        const borderContainer = document.querySelector(".border-container");
+
+        // Images associated with each section
+        const images = {
+          section1:
+            "https://themes12.anvanto.com/super/themes/birdwings/90-home_default/brown-bear-printed-sweater.jpg",
+          section2:
+            "https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg",
+          section3:
+            "https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg",
+          section4:
+            "https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg",
+        };
+
+        // Initially show image for Section 1 (no active border color)
+        imageDisplay.src = images.section1;
+
+        // Add hover event listeners to each section
+        imageSections.forEach((section, index) => {
+          section.addEventListener("mouseover", () => {
+            borderContainer.classList.add("border-b", "border-gray-25");
+            const id = section.id;
+
+            // Smoothly fade the image to the next one
+            //   imageDisplay.classList.add("opacity-50");
+
+            imageDisplay.src = images[id];
+            //   setTimeout(() => {
+            //     imageDisplay.classList.remove("opacity-50");
+            //   }, 300);
+
+            // Remove red border from all segments and highlight the corresponding one
+            segments.forEach((seg) =>
+              seg.classList.remove("border-red-200", "border-b-2")
+            );
+            segments[index].classList.add("border-red-200", "border-b-2");
+          });
+
+          section.addEventListener("mouseleave", () => {
+            borderContainer.classList.remove("border-b", "border-gray-50");
+            // Reset to section 1 image without showing any border
+            //   imageDisplay.classList.add("opacity-50");
+            imageDisplay.src = images.section1;
+            //   setTimeout(() => {
+            //     imageDisplay.classList.remove("opacity-50");
+            //   }, 300);
+
+            // Remove active border color when not hovering
+            segments.forEach((seg) =>
+              seg.classList.remove("border-red-200", "border-b-2")
+            );
+          });
+        });
+      });
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="">
+    <section class="container mx-auto py-8">
+      <div
+        class="grid lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-4"
+      >
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto mt-4">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+          </div>
+          <div
+            class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1"
+          >
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+            <div
+              class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"
+            ></div>
+          </div>
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button
+              class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full"
+            >
+              add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

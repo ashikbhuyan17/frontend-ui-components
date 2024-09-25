@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Bar Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body class="bg-gray-100">
+    <!-- Top bar -->
+    <div class="bg-teal-700 text-white">
+        <div class="container mx-auto flex justify-between items-center py-2 px-4">
+            <!-- Left side (Contact info and links) -->
+            <div class="flex space-x-4 text-sm">
+                <span>+880 1891153770</span>
+                <span>|</span>
+                <a href="#" class="hover:underline">Our Policies</a>
+                <span>|</span>
+                <a href="#" class="hover:underline">Customer Care</a>
+                <span>|</span>
+                <a href="#" class="hover:underline">Become a Seller</a>
+            </div>
+
+            <!-- Right side (Social media icons) -->
+            <div class="flex space-x-4 text-sm">
+                <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white py-4   space-y-5">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center w-[50px] ml-5">
+                <img src="./images/shopping-bag.png" alt="Logo" width="100%" />
+            </div>
+
+            <!-- Search bar -->
+            <div class="flex items-center w-1/2">
+                <input type="text" placeholder="Search Products..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-l-lg bg-gray-200 outline-none focus:bg-white transition-all" />
+                <button class="bg-teal-600 text-white p-[9px] rounded-r-lg hover:bg-teal-700">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Icons (Wishlist, Cart, Sign In) -->
+            <div class="flex items-center space-x-6">
+                <!-- Wishlist Icon -->
+                <a href="#" class="text-gray-600 hover:text-teal-600">
+                    <i class="far fa-heart text-xl"></i>
+                </a>
+                <!-- Cart Icon with item count -->
+                <a href="#" class="relative text-gray-600 hover:text-teal-600 w-[40px]">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span
+                        class="absolute top-[-13px] right-0 bg-teal-700 text-white p-[1px] text-xs rounded-full px-1">10</span>
+                </a>
+                <!-- Sign in Icon -->
+                <a href="#" class="text-gray-600 hover:text-teal-600 flex items-center space-x-1">
+                    <i class="fas fa-user text-xl"></i>
+                    <span>Sign in</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-100"></div>
+
+        <!-- Navbar -->
+        <nav class="container mx-auto ">
+            <ul class="flex justify-center items-center space-x-6 ">
+                <li class="group relative">
+                    <a href="#" class="flex items-center space-x-1 hover:text-teal-600">
+                        <svg class="w-6 h-6 fill-teal-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 3l1.447 1.447-7.031 7.031v7.494h4.294v-4.294h4.794v4.294h4.294v-7.494l-7.031-7.031 1.447-1.447zm0-2l9 9v11h-7v-6h-4v6h-7v-11l9-9z" />
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <span>|</span>
+                <li>
+                    <div class="tables">
+                        <a href="#" class="hover:text-teal-600">Our Selection</a>
+                        <div class="tables-content shadow-md rounded-md w-[500px]">
+                            <div class="flex justify-between">
+                                <div class="">
+                                    <!-- <img class="p-2"
+                                        src="https://super01.anvanto.com/super/themes/morse_10/modules/an_homeslider/img/c269bb8c90a8c44d0c6ec92376f5e017_1.jpg"
+                                        width="auto" height="auto" alt="Exquisite furniture for any interior"> -->
+                                    <a href="#">Beds</a>
+                                    <a href="#">Tables</a>
+                                    <a href="#">Stores</a>
+                                    <a href="#">Wardrobes</a>
+                                </div>
+                                <div class="">
+                                    <a href="#">Countertops</a>
+                                    <a href="#">Cabinets & Fronts</a>
+                                    <a href="#">Appliances</a>
+                                </div>
+                                <div class="">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <span>|</span>
+                <li><a href="#" class="hover:text-teal-600">Shampoo</a></li>
+                <span>|</span>
+                <li><a href="#" class="hover:text-teal-600">Hair Care</a></li>
+                <span>|</span>
+                <li>
+                    <div class="tables">
+                        <a href="#" class="hover:text-teal-600">Tables</a>
+                        <div class="tables-content shadow-md rounded-md w-[150px]">
+                            <div class="flex justify-between items-center">
+
+                                <div class="w-full">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="tables relative inline-block">
+                <button class="dropbtn bg-inherit  text-lg border-none py-3 px-4">
+                    Tables 
+                </button>
+                <div class="tables-content opacity-0 invisible absolute bg-gray-100 min-w-[500px] shadow-lg z-10 origin-center transition-all duration-300 ease-in-out">
+                    <div class="flex justify-between p-4">
+                        <div class="w-full">
+                            <img class="p-2" src="https://super01.anvanto.com/super/themes/morse_10/modules/an_homeslider/img/c269bb8c90a8c44d0c6ec92376f5e017_1.jpg" alt="Exquisite furniture for any interior">
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Beds</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Tables</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Stores</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Wardrobes</a>
+                        </div>
+                        <div class="w-full">
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Countertops</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Cabinets & Fronts</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Appliances</a>
+                        </div>
+                        <div class="w-full">
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Link 1</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Link 2</a>
+                            <a href="#" class="block py-2 text-black hover:bg-gray-200 transition duration-150 ease-in-out">Link 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                const tables = document.querySelector('.tables');
+                const content = tables.querySelector('.tables-content');
+            
+                tables.addEventListener('mouseover', () => {
+                    content.classList.remove('opacity-0', 'invisible');
+                    content.classList.add('opacity-100', 'visible');
+                });
+            
+                tables.addEventListener('mouseout', () => {
+                    content.classList.remove('opacity-100', 'visible');
+                    content.classList.add('opacity-0', 'invisible');
+                });
+            </script> -->
+
+                </li>
+                <span>|</span>
+
+                <li><a href="#" class="hover:text-teal-600">Masks</a></li>
+                <span>|</span>
+                <li><a href="#" class="hover:text-teal-600">Shampoo</a></li>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container mx-auto overflow-hidden mt-1 rounded-md">
+        <div class="space-y-5 h-auto ">
+            <img src="./images/banner2.jpg" alt="Exquisite furniture for any interior"
+                class="w-full h-auto object-cover">
+        </div>
+        <!-- <div class="gap-x-1 flex  h-[400px]">
+            <img 
+                src="./images/banner.jpg"
+                alt="Exquisite furniture for any interior" 
+                class="w-full h-auto object-cover md:w-1/2">
+            <img 
+                src="./images/banner.jpg"
+                alt="Exquisite furniture for any interior" 
+                class="w-full h-auto object-cover md:w-1/2">
+        </div> -->
+
+    </section>
+    <section class="container mx-auto overflow-hidden my-3">
+        <div class="flex justify-center items-center space-x-8 shadow-md py-4 bg-white ">
+            <!-- Easy Payment -->
+            <div class="flex items-center space-x-2">
+                <img src="./images/EasyPayment.jpeg" alt="Easy Payment" class="w-6 h-6">
+                <span class="text-gray-700">Easy Payment</span>
+            </div>
+
+            <!-- Divider -->
+            <span class="text-gray-400">|</span>
+
+            <!-- Nationwide Delivery -->
+            <div class="flex items-center space-x-2">
+                <img src="./images/NationwideDelivery.jpeg" alt="Nationwide Delivery" class="w-6 h-6">
+                <span class="text-gray-700">Nationwide Delivery</span>
+            </div>
+
+            <!-- Divider -->
+            <span class="text-gray-400">|</span>
+
+            <!-- Free & Easy Returns -->
+            <div class="flex items-center space-x-2">
+                <img src="./images/Free.jpeg" alt="Free & Easy Returns" class="w-6 h-6">
+                <span class="text-gray-700">Free & Easy Returns</span>
+            </div>
+
+            <!-- Divider -->
+            <span class="text-gray-400">|</span>
+
+            <!-- Best Price Guaranteed -->
+            <div class="flex items-center space-x-2">
+                <img src="./images/BestPrice.jpg" alt="Best Price Guaranteed" class="w-6 h-6">
+                <span class="text-gray-700">Best Price Guaranteed</span>
+            </div>
+
+            <!-- Divider -->
+            <span class="text-gray-400">|</span>
+
+            <!-- 100% Authentic Products -->
+            <div class="flex items-center space-x-2">
+                <img src="./images/authntic.jpg" alt="100% Authentic Products" class="w-6 h-6">
+                <span class="text-gray-700">100% Authentic Products</span>
+            </div>
+
+            <!-- Divider -->
+            <span class="text-gray-400">|</span>
+
+            <!-- Secure Payment -->
+            <div class="flex items-center space-x-2">
+                <img src="./images/SecurePayment.jpeg" alt="Secure Payment" class="w-6 h-6">
+                <span class="text-gray-700">Secure Payment</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-8 space-y-8">
+      <div class=" uppercase flex justify-between">
+        <p class="font-semibold  text-center tracking-wide">
+          Featured Products
+        </p>
+        <p class="font-semibold text-center text-gray-500 tracking-wide"><span class="border-b-2 border-gray-400">see</span> more</p>
+      </div>
+        <div
+          class="grid lg:grid-cols-6 md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-4"
+        >
+        <div class="group hover:shadow-md p-2 duration-300 ease-in-out">
+          <div class="image-container relative h-[203.75px] mx-auto">
+            <img
+              id="image-display"
+              class="w-full h-full transition-opacity duration-300 rounded-md"
+              src=""
+              alt="Image display"
+            />
+        
+            <!-- Invisible hover areas over the image (divided into 4 sections) -->
+            <div
+              id="section1"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+            ></div>
+            <div
+              id="section2"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+            ></div>
+            <div
+              id="section3"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+            ></div>
+            <div
+              id="section4"
+              class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+            ></div>
+        
+            <!-- On Sale and Discount Badges -->
+            <div class="absolute top-0 left-0 space-y-2">
+              <p class="border border-black text-white bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                on sale
+              </p>
+              <p class="border border-black text-white w-[30px] bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                20%
+              </p>
+            </div>
+        
+            <!-- Search icon - becomes visible on hover over the image or card -->
+            <div class="absolute top-[10px] right-[10px] space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
+              <p class="bg-inherit text-gray-300 bg-gray-300 text-[10px] py-[1px] px-1 rounded-md uppercase text-5xl">
+                <i class="fas fa-search text-[17px]"></i>
+              </p>
+            </div>
+          </div>
+        
+          <!-- Border container for lines -->
+          <div class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1">
+            <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+          </div>
+        
+          <!-- Product info and CTA -->
+          <div class="space-y-2 mt-2">
+            <p>Bethan Laura Wood for...</p>
+            <p class="pb-2">
+              <span class="text-[#EA3B02] font-bold">$28.00</span>
+              <span class="font-bold line-through text-gray-400">$35.00</span>
+            </p>
+            <button class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full">
+              add to cart
+            </button>
+          </div>
+        </div>
+        <div class="group hover:shadow-md p-2 duration-300 ease-in-out">
+            <div class="image-container relative h-[203.75px] mx-auto">
+              <img
+                id="image-display"
+                class="w-full h-full transition-opacity duration-300 rounded-md"
+                src=""
+                alt="Image display"
+              />
+          
+              <!-- Invisible hover areas over the image (divided into 4 sections) -->
+              <div
+                id="section1"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+              ></div>
+              <div
+                id="section2"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+              ></div>
+              <div
+                id="section3"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+              ></div>
+              <div
+                id="section4"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+              ></div>
+          
+              <!-- On Sale and Discount Badges -->
+              <div class="absolute top-0 left-0 space-y-2">
+                <p class="border border-black text-white bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  on sale
+                </p>
+                <p class="border border-black text-white w-[30px] bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  20%
+                </p>
+              </div>
+          
+              <!-- Search icon - becomes visible on hover over the image or card -->
+              <div class="absolute top-[10px] right-[10px] space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
+                <p class="bg-inherit text-gray-300 bg-gray-300 text-[10px] py-[1px] px-1 rounded-md uppercase text-5xl">
+                  <i class="fas fa-search text-[17px]"></i>
+                </p>
+              </div>
+            </div>
+          
+            <!-- Border container for lines -->
+            <div class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1">
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            </div>
+          
+            <!-- Product info and CTA -->
+            <div class="space-y-2 mt-2">
+              <p>Bethan Laura Wood for...</p>
+              <p class="pb-2">
+                <span class="text-[#EA3B02] font-bold">$28.00</span>
+                <span class="font-bold line-through text-gray-400">$35.00</span>
+              </p>
+              <button class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full">
+                add to cart
+              </button>
+            </div>
+          </div>
+          <div class="group hover:shadow-md p-2 duration-300 ease-in-out">
+            <div class="image-container relative h-[203.75px] mx-auto">
+              <img
+                id="image-display"
+                class="w-full h-full transition-opacity duration-300 rounded-md"
+                src=""
+                alt="Image display"
+              />
+          
+              <!-- Invisible hover areas over the image (divided into 4 sections) -->
+              <div
+                id="section1"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+              ></div>
+              <div
+                id="section2"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+              ></div>
+              <div
+                id="section3"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+              ></div>
+              <div
+                id="section4"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+              ></div>
+          
+              <!-- On Sale and Discount Badges -->
+              <div class="absolute top-0 left-0 space-y-2">
+                <p class="border border-black text-white bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  on sale
+                </p>
+                <p class="border border-black text-white w-[30px] bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  20%
+                </p>
+              </div>
+          
+              <!-- Search icon - becomes visible on hover over the image or card -->
+              <div class="absolute top-[10px] right-[10px] space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
+                <p class="bg-inherit text-gray-300 bg-gray-300 text-[10px] py-[1px] px-1 rounded-md uppercase text-5xl">
+                  <i class="fas fa-search text-[17px]"></i>
+                </p>
+              </div>
+            </div>
+          
+            <!-- Border container for lines -->
+            <div class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1">
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            </div>
+          
+            <!-- Product info and CTA -->
+            <div class="space-y-2 mt-2">
+              <p>Bethan Laura Wood for...</p>
+              <p class="pb-2">
+                <span class="text-[#EA3B02] font-bold">$28.00</span>
+                <span class="font-bold line-through text-gray-400">$35.00</span>
+              </p>
+              <button class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full">
+                add to cart
+              </button>
+            </div>
+          </div>
+          <div class="group hover:shadow-md p-2 duration-300 ease-in-out">
+            <div class="image-container relative h-[203.75px] mx-auto">
+              <img
+                id="image-display"
+                class="w-full h-full transition-opacity duration-300 rounded-md"
+                src=""
+                alt="Image display"
+              />
+          
+              <!-- Invisible hover areas over the image (divided into 4 sections) -->
+              <div
+                id="section1"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+              ></div>
+              <div
+                id="section2"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+              ></div>
+              <div
+                id="section3"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+              ></div>
+              <div
+                id="section4"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+              ></div>
+          
+              <!-- On Sale and Discount Badges -->
+              <div class="absolute top-0 left-0 space-y-2">
+                <p class="border border-black text-white bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  on sale
+                </p>
+                <p class="border border-black text-white w-[30px] bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  20%
+                </p>
+              </div>
+          
+              <!-- Search icon - becomes visible on hover over the image or card -->
+              <div class="absolute top-[10px] right-[10px] space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
+                <p class="bg-inherit text-gray-300 bg-gray-300 text-[10px] py-[1px] px-1 rounded-md uppercase text-5xl">
+                  <i class="fas fa-search text-[17px]"></i>
+                </p>
+              </div>
+            </div>
+          
+            <!-- Border container for lines -->
+            <div class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1">
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            </div>
+          
+            <!-- Product info and CTA -->
+            <div class="space-y-2 mt-2">
+              <p>Bethan Laura Wood for...</p>
+              <p class="pb-2">
+                <span class="text-[#EA3B02] font-bold">$28.00</span>
+                <span class="font-bold line-through text-gray-400">$35.00</span>
+              </p>
+              <button class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full">
+                add to cart
+              </button>
+            </div>
+          </div>
+          <div class="group hover:shadow-md p-2 duration-300 ease-in-out">
+            <div class="image-container relative h-[203.75px] mx-auto">
+              <img
+                id="image-display"
+                class="w-full h-full transition-opacity duration-300 rounded-md"
+                src=""
+                alt="Image display"
+              />
+          
+              <!-- Invisible hover areas over the image (divided into 4 sections) -->
+              <div
+                id="section1"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+              ></div>
+              <div
+                id="section2"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+              ></div>
+              <div
+                id="section3"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+              ></div>
+              <div
+                id="section4"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+              ></div>
+          
+              <!-- On Sale and Discount Badges -->
+              <div class="absolute top-0 left-0 space-y-2">
+                <p class="border border-black text-white bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  on sale
+                </p>
+                <p class="border border-black text-white w-[30px] bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  20%
+                </p>
+              </div>
+          
+              <!-- Search icon - becomes visible on hover over the image or card -->
+              <div class="absolute top-[10px] right-[10px] space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
+                <p class="bg-inherit text-gray-300 bg-gray-300 text-[10px] py-[1px] px-1 rounded-md uppercase text-5xl">
+                  <i class="fas fa-search text-[17px]"></i>
+                </p>
+              </div>
+            </div>
+          
+            <!-- Border container for lines -->
+            <div class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1">
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            </div>
+          
+            <!-- Product info and CTA -->
+            <div class="space-y-2 mt-2">
+              <p>Bethan Laura Wood for...</p>
+              <p class="pb-2">
+                <span class="text-[#EA3B02] font-bold">$28.00</span>
+                <span class="font-bold line-through text-gray-400">$35.00</span>
+              </p>
+              <button class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full">
+                add to cart
+              </button>
+            </div>
+          </div>
+          <div class="group hover:shadow-md p-2 duration-300 ease-in-out">
+            <div class="image-container relative h-[203.75px] mx-auto">
+              <img
+                id="image-display"
+                class="w-full h-full transition-opacity duration-300 rounded-md"
+                src=""
+                alt="Image display"
+              />
+          
+              <!-- Invisible hover areas over the image (divided into 4 sections) -->
+              <div
+                id="section1"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-0"
+              ></div>
+              <div
+                id="section2"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-1/4"
+              ></div>
+              <div
+                id="section3"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-2/4"
+              ></div>
+              <div
+                id="section4"
+                class="image-section absolute top-0 h-full w-1/4 cursor-pointer left-3/4"
+              ></div>
+          
+              <!-- On Sale and Discount Badges -->
+              <div class="absolute top-0 left-0 space-y-2">
+                <p class="border border-black text-white bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  on sale
+                </p>
+                <p class="border border-black text-white w-[30px] bg-black text-[10px] py-[1px] px-1 rounded-md uppercase">
+                  20%
+                </p>
+              </div>
+          
+              <!-- Search icon - becomes visible on hover over the image or card -->
+              <div class="absolute top-[10px] right-[10px] space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-2000">
+                <p class="bg-inherit text-gray-300 bg-gray-300 text-[10px] py-[1px] px-1 rounded-md uppercase text-5xl">
+                  <i class="fas fa-search text-[17px]"></i>
+                </p>
+              </div>
+            </div>
+          
+            <!-- Border container for lines -->
+            <div class="border-container flex justify-between items-center w-full border-gray-300 mx-auto mt-1">
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+              <div class="border-segment w-full h-full border-t-2 border-transparent cursor-pointer"></div>
+            </div>
+          
+            <!-- Product info and CTA -->
+            <div class="space-y-2 mt-2">
+              <p>Bethan Laura Wood for...</p>
+              <p class="pb-2">
+                <span class="text-[#EA3B02] font-bold">$28.00</span>
+                <span class="font-bold line-through text-gray-400">$35.00</span>
+              </p>
+              <button class="border-2 border-gray-200 py-1 px-2 rounded-md font-medium uppercase w-full">
+                add to cart
+              </button>
+            </div>
+          </div>
+         
+        
+         
+      </section>
+
+
+
+
+
+    <!-- <div class="thumbnail product-thumbnail hover_slider  flex justify-center items-center " style="height: 203.75px;">
+
+        <ul class="flex justify-center items-center w-[500px] relative  ">
+            <li class="cover-item opacity-1 w-full absolute">
+                <div class="hover-slider-img ">
+                    <img src=" https://themes12.anvanto.com/super/themes/birdwings/90-home_default/brown-bear-printed-sweater.jpg"
+                        style="height: 203.75px;">
+
+                </div>
+            </li>
+            <li class="no-cover-item opacity-1 w-full absolute">
+                <div class="hover-slider-img">
+                    <img class="b-lazy hover-slider-image b-loaded b-initialized"
+                        data-full-size-image-url="https://themes12.anvanto.com/super/themes/birdwings/91-large_default/brown-bear-printed-sweater.jpg"
+                        src="  																					https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg
+                                                                            "
+                        data-lazy-gif="https://themes12.anvanto.com/super/themes/birdwings//modules/an_theme/views/img/loading.svg"
+                        data-catalog-small="https://themes12.anvanto.com/super/themes/birdwings/91-catalog_small/brown-bear-printed-sweater.jpg"
+                        data-catalog-medium="https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg"
+                        data-catalog-large="https://themes12.anvanto.com/super/themes/birdwings/91-catalog_large/brown-bear-printed-sweater.jpg"
+                        alt="Bethan Laura Wood for Bitossi Ceramiche vase A in green" data-width="255" data-height="255"
+                        content="https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg"
+                        style="height: 203.75px;">
+                </div>
+            </li>
+            <li class="no-cover-item opacity-0">
+                <div class="hover-slider-img">
+                    <img class="b-lazy hover-slider-image b-loaded b-initialized"
+                        data-full-size-image-url="https://themes12.anvanto.com/super/themes/birdwings/92-large_default/brown-bear-printed-sweater.jpg"
+                        src="  																					https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg
+                                                                            "
+                        data-lazy-gif="https://themes12.anvanto.com/super/themes/birdwings//modules/an_theme/views/img/loading.svg"
+                        data-catalog-small="https://themes12.anvanto.com/super/themes/birdwings/92-catalog_small/brown-bear-printed-sweater.jpg"
+                        data-catalog-medium="https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg"
+                        data-catalog-large="https://themes12.anvanto.com/super/themes/birdwings/92-catalog_large/brown-bear-printed-sweater.jpg"
+                        alt="Bethan Laura Wood for Bitossi Ceramiche vase A in green" data-width="255" data-height="255"
+                        content="https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg"
+                        style="height: 203.75px;">
+                </div>
+            </li>
+            <li class="no-cover-item opacity-0">
+                <div class="hover-slider-img">
+                    <img class="b-lazy hover-slider-image b-loaded b-initialized"
+                        data-full-size-image-url="https://themes12.anvanto.com/super/themes/birdwings/93-large_default/brown-bear-printed-sweater.jpg"
+                        src="  																					https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg
+                                                                            "
+                        data-lazy-gif="https://themes12.anvanto.com/super/themes/birdwings//modules/an_theme/views/img/loading.svg"
+                        data-catalog-small="https://themes12.anvanto.com/super/themes/birdwings/93-catalog_small/brown-bear-printed-sweater.jpg"
+                        data-catalog-medium="https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg"
+                        data-catalog-large="https://themes12.anvanto.com/super/themes/birdwings/93-catalog_large/brown-bear-printed-sweater.jpg"
+                        alt="Bethan Laura Wood for Bitossi Ceramiche vase A in green" data-width="255" data-height="255"
+                        content="https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg"
+                        style="height: 203.75px;">
+                </div>
+            </li>
+        </ul>
+    </div> -->
+
+    <!-- Footer -->
+    <footer class="bg-white py-10">
+      <div class="">
+        <div
+          class="max-md:p-3 md:container md:mx-auto grid max-md:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8 place-content-end"
+        >
+          <!-- Brand and Contact Info -->
+          <div class="">
+            <h2 class="text-2xl font-bold mb-4">kalles</h2>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-600">
+                <i class="fa-solid fa-location-dot mr-3"></i>
+                184 Main Rd E, St Albans VIC 3021, Australia
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa-solid fa-envelope mr-3"></i>
+                contact@company.com
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="fa-solid fa-phone mr-3"></i>
+                +001 2233 456
+              </li>
+            </ul>
+
+            <div class="mt-4 flex space-x-3">
+              <a href="#" class="text-gray-600 hover:text-gray-800">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-gray-800">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-gray-800">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-gray-800">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-gray-800">
+                <i class="fa-brands fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Categories</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:underline">Men</a></li>
+              <li><a href="#" class="hover:underline">Women</a></li>
+              <li><a href="#" class="hover:underline">Accessories</a></li>
+              <li><a href="#" class="hover:underline">Shoes</a></li>
+              <li><a href="#" class="hover:underline">Denim</a></li>
+              <li><a href="#" class="hover:underline">Dress</a></li>
+            </ul>
+          </div>
+
+          <!-- Information -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Information</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:underline">About Us</a></li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+              <li>
+                <a href="#" class="hover:underline">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Returns & Exchanges</a>
+              </li>
+              <li>
+                <a href="#" class="hover:underline">Shipping & Delivery</a>
+              </li>
+              <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Useful Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Useful links</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:underline">Store Location</a></li>
+              <li><a href="#" class="hover:underline">Latest News</a></li>
+              <li><a href="#" class="hover:underline">My Account</a></li>
+              <li><a href="#" class="hover:underline">Size Guide</a></li>
+              <li><a href="#" class="hover:underline">FAQs</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div>
+            <h3 class="text-lg font-bold mb-4">Newsletter Signup</h3>
+            <p class="text-gray-600 mb-4">
+              Subscribe to our newsletter and get 10% off your first purchase.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="w-full px-4 py-2 border border-gray-300 rounded-l-md"
+              />
+              <button
+                type="submit"
+                class="px-4 py-2 bg-black text-white rounded-r-md"
+              >
+                Subscribe
+              </button>
+            </form>
+            <div class="mt-4 flex space-x-4">
+              <img
+                src="https://via.placeholder.com/40x25"
+                alt="Paypal"
+                class="w-10"
+              />
+              <img
+                src="https://via.placeholder.com/40x25"
+                alt="Visa"
+                class="w-10"
+              />
+              <img
+                src="https://via.placeholder.com/40x25"
+                alt="Mastercard"
+                class="w-10"
+              />
+              <img
+                src="https://via.placeholder.com/40x25"
+                alt="Skrill"
+                class="w-10"
+              />
+              <img
+                src="https://via.placeholder.com/40x25"
+                alt="Bank Transfer"
+                class="w-10"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-8 text-center text-gray-500 text-sm">
+          <p>
+            Copyright © 2024 <a href="#" class="text-blue-600">Kalles</a> all
+            rights reserved. Powered by
+            <a href="#" class="text-blue-600">The4</a>.
+          </p>
+          <div class="mt-4 space-x-4">
+            <a href="#" class="text-gray-600 hover:underline">Shop</a>
+            <a href="#" class="text-gray-600 hover:underline">About Us</a>
+            <a href="#" class="text-gray-600 hover:underline">Contact</a>
+            <a href="#" class="text-gray-600 hover:underline">Blog</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function () {
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+    <!-- <script>
+        const segments = document.querySelectorAll('.border-segment');
+        const dataDisplay = document.getElementById('data-display');
+
+        // Data associated with each border line
+        const data = {
+            line1: 'Data for Line 1',
+            line2: 'Data for Line 2',
+            line3: 'Data for Line 3',
+            line4: 'Data for Line 4'
+        };
+
+        // Initially show data for Line 1
+        document.getElementById('line1').classList.add('border-red-500');
+        dataDisplay.innerText = data.line1;
+
+        // Add hover event listeners to each segment
+        segments.forEach(segment => {
+            segment.addEventListener('mouseover', () => {
+                // Remove red border from all segments
+                segments.forEach(seg => seg.classList.remove('border-red-500'));
+
+                const id = segment.id;
+                // Add red border to the hovered segment and display data
+                segment.classList.add('border-red-500');
+                dataDisplay.innerText = data[id];
+            });
+
+            segment.addEventListener('mouseleave', () => {
+                // Reset to the default border on hover leave (optional)
+                // dataDisplay.innerText = 'Hover over the lines to see data.';
+            });
+        });
+
+    </script> -->
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+          const imageDisplay = document.getElementById("image-display");
+          const imageSections = document.querySelectorAll(".image-section");
+          const segments = document.querySelectorAll(".border-segment");
+          const borderContainer = document.querySelector(".border-container");
+  
+          // Images associated with each section
+          const images = {
+            section1:
+              "https://themes12.anvanto.com/super/themes/birdwings/90-home_default/brown-bear-printed-sweater.jpg",
+            section2:
+              "https://themes12.anvanto.com/super/themes/birdwings/91-home_default/brown-bear-printed-sweater.jpg",
+            section3:
+              "https://themes12.anvanto.com/super/themes/birdwings/92-home_default/brown-bear-printed-sweater.jpg",
+            section4:
+              "https://themes12.anvanto.com/super/themes/birdwings/93-home_default/brown-bear-printed-sweater.jpg",
+          };
+  
+          // Initially show image for Section 1 (no active border color)
+          imageDisplay.src = images.section1;
+  
+          // Add hover event listeners to each section
+          imageSections.forEach((section, index) => {
+            section.addEventListener("mouseover", () => {
+              borderContainer.classList.add("border-b", "border-gray-25");
+              const id = section.id;
+  
+              // Smoothly fade the image to the next one
+            //   imageDisplay.classList.add("opacity-50");
+  
+              imageDisplay.src = images[id];
+            //   setTimeout(() => {
+            //     imageDisplay.classList.remove("opacity-50");
+            //   }, 300);
+  
+              // Remove red border from all segments and highlight the corresponding one
+              segments.forEach((seg) =>
+                seg.classList.remove("border-red-200", "border-b-2")
+              );
+              segments[index].classList.add("border-red-200", "border-b-2");
+            });
+  
+            section.addEventListener("mouseleave", () => {
+              borderContainer.classList.remove("border-b", "border-gray-50");
+              // Reset to section 1 image without showing any border
+            //   imageDisplay.classList.add("opacity-50");
+              imageDisplay.src = images.section1;
+            //   setTimeout(() => {
+            //     imageDisplay.classList.remove("opacity-50");
+            //   }, 300);
+  
+              // Remove active border color when not hovering
+              segments.forEach((seg) =>
+                seg.classList.remove("border-red-200", "border-b-2")
+              );
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>
